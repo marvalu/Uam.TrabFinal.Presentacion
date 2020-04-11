@@ -12,10 +12,10 @@ namespace Uam.TrabFinal.Entidades
 
         T Buscar(int id);
 
-        void Insertar(T item);
+        Boolean Insertar(T item);
 
-        void Eliminar(T item);
+        Boolean Eliminar(T item);
 
-        void Modificar(T item);
+        Boolean Modificar(T item);
     }
 }

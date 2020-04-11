@@ -13,19 +13,46 @@ namespace Uam.TrabFinal.Entidades
             throw new NotImplementedException();
         }
 
-        public void Eliminar(Persona item)
+        Boolean Eliminar(Persona item)
         {
-            throw new NotImplementedException();
+            string query = string.Format("SELECT * FROM Persona WHERE Id = {0};",item.Id);
+            return dat.NonQuery(query);
+             if (query!=null){
+            string query = string.Format("DELETE Persona WHERE Id = {0};", item.Id);
+                }
+            return dat.NonQuery(query);
         }
 
-        public void Insertar(Persona item)
+        Boolean Insertar(Persona item)
         {
-            throw new NotImplementedException();
+            string query = string.Format("SELECT * FROM Persona WHERE Email = {0};",item.Email);
+                return dat.NonQuery(query);
+            if (query==null){
+              string query = string.Format("INSERT INTO Persona (Nombre,Apellidos,Cedula,Email,Tipo,Password) " +
+                "VALUES('{0}','{1}','{2}','{3}','{4}','{5}');",
+                item.Nombre, item.Apellido, item.Cedula, item.Email, item.TipoUsuario, item.Password);
+                return dat.NonQuery(query);
+                }
+            else{
+            Console.WriteLine("No se puede insertar mail igual");
+                Boolean validar=false;
+                return validar;
+            }
+            
         }
 
-        public void Modificar(Persona item)
+        Boolean Modificar(Persona item)
         {
-            throw new NotImplementedException();
+             string query = string.Format("SELECT * FROM Persona WHERE Id = {0};",item.Id);
+                return dat.NonQuery(query);
+            if (query!=null){
+                string query = string.Format("UPDATE INTO Persona (Nombre,Apellidos,Cedula,Email,Tipo,Password) " +
+                "VALUES('{0}','{1}','{2}','{3}','{4}','{5}');",
+                item.Nombre, item.Apellido, item.Cedula, item.Email, item.TipoUsuario, item.Password);
+                return dat.NonQuery(query);
+
+
         }
     }
+}
 }

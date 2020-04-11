@@ -16,6 +16,7 @@ namespace Uam.TrabFinal.Entidades
         private string _cedula;
         private string _email;
         private string _tipoUsuario;
+        private string _password;
 
      
 
@@ -25,9 +26,10 @@ namespace Uam.TrabFinal.Entidades
         public string Cedula { get => _cedula; set => _cedula = value; }
         public string Email { get => _email; set => _email = value; }
         public string TipoUsuario { get => _tipoUsuario; set => _tipoUsuario = value; }
+        public string Password{get =>_password; set=>_password=value;}
 
 
-        public Persona(int id, string nombre, string apellido, string cedula, string email, string tipoUsuario)
+        public Persona(int id, string nombre, string apellido, string cedula, string email, string tipoUsuario, string password)
         {
             _id = id;
             _nombre = nombre;
@@ -35,6 +37,7 @@ namespace Uam.TrabFinal.Entidades
             _cedula = cedula;
             _email = email;
             _tipoUsuario = tipoUsuario;
+            _password= Password;
         }
 
         public Persona() { }

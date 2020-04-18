@@ -9,13 +9,10 @@ namespace Uam.TrabFinal.Entidades
     public interface  ICRUD <T>
     {
 
-
-        T Buscar(int id);
-
-        Boolean Insertar(T item);
-
-        Boolean Eliminar(T item);
-
-        Boolean Modificar(T item);
+        void Insertar(T entidad);
+        void Elminiar(int id);
+        void Modificar(T entidad);
+        DataTable Buscar(int id);
+        DataTable BuscarTodos();
     }
 }

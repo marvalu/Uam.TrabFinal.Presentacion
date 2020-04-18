@@ -11,7 +11,7 @@ namespace Uam.TrabFinal.Logica
     public class Class1
     {
 
-        Persona persona = new Persona();
+      //  Persona persona = new Persona();
         
     }
 }

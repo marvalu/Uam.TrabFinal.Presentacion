@@ -42,6 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="presentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion.Designer.cs">
+      <DependentUpon>presentacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -52,10 +58,19 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Uam.TrabFinal.Entidades\Uam.TrabFinal.Entidades.csproj">
+      <Project>{31b4fa77-3ee1-406f-8573-9a4221cc12d5}</Project>
+      <Name>Uam.TrabFinal.Entidades</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Uam.TrabFinal.Logica\Uam.TrabFinal.Logica.csproj">
       <Project>{b10bbd48-06e4-4e7c-b428-d04744399c3d}</Project>
       <Name>Uam.TrabFinal.Logica</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="presentacion.resx">
+      <DependentUpon>presentacion.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

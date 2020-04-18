@@ -49,6 +49,10 @@
       <Project>{581b86f3-183c-4162-bc7d-e38a5dc6e5f5}</Project>
       <Name>Uam.TrabFinal.Datos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Uam.TrabFinal.Entidades\Uam.TrabFinal.Entidades.csproj">
+      <Project>{31b4fa77-3ee1-406f-8573-9a4221cc12d5}</Project>
+      <Name>Uam.TrabFinal.Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

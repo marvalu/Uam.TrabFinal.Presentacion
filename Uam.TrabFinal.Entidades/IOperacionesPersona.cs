@@ -4,19 +4,14 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Uam.TrabFinal.Datos;
 
 namespace Uam.TrabFinal.Entidades
 {
-    public class CRUDEspectaculos : ICRUD<Espectaculo>
+    public class IOperacionesPersona : ICRUD<Persona>
     {
-        Conexion conexion = new Conexion();
-
         public DataTable Buscar(int id)
         {
-            string query = string.Format("SELECT * FROM Espectaculos Where Id = {0};", id);
-
-            return conexion.ConexionADO(query);
+            throw new NotImplementedException();
         }
 
         public DataTable BuscarTodos()
@@ -24,17 +19,17 @@ namespace Uam.TrabFinal.Entidades
             throw new NotImplementedException();
         }
 
-        public void Elminiar(int id)
+        public bool Elminiar(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Insertar(Espectaculo entidad)
+        public bool Insertar(Persona entidad)
         {
             throw new NotImplementedException();
         }
 
-        public void Modificar(Espectaculo entidad)
+        public bool Modificar(Persona entidad)
         {
             throw new NotImplementedException();
         }

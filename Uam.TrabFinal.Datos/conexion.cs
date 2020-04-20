@@ -11,9 +11,8 @@ namespace Uam.TrabFinal.Datos
    public class conexion
     {
 
-        private string ConnectionString = @"Data Source=DESKTOP-9I35C0O\SQLEXPRESS;Initial Catalog=TrabFinal;User ID=progra3;Password=123456";
-        //  private string ConnectionString = "Data Source=localhost\\SQLSERVER;Initial Catalog=YourDataBaseName;Integrated Security=True;" providerName="System.Data.SqlClient"
-
+     //  private string ConnectionString = @"Data Source=DESKTOP-9I35C0O\SQLEXPRESS;Initial Catalog=TrabFinal;User ID=progra3;Password=123456";
+        private readonly string ConnectionString = "Data Source=.;Initial Catalog=Progra3;Integrated Security=True";
         public Boolean Query(string query)
         {
             SqlDataReader resultado = null;
@@ -88,6 +87,7 @@ namespace Uam.TrabFinal.Datos
                 return null;
             }
         }
+
 
     }
 }

@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{31B4FA77-3EE1-406F-8573-9A4221CC12D5}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Uam.TrabFinal.Entidades</RootNamespace>
-    <AssemblyName>Uam.TrabFinal.Entidades</AssemblyName>
+    <ProjectGuid>{F6815E1E-EA05-44CF-A3ED-26BADAD357C6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Uam.TrabFinal.SocketCliente</RootNamespace>
+    <AssemblyName>Uam.TrabFinal.SocketCliente</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,7 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,19 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IOperacionesEspectaculo.cs" />
-    <Compile Include="IOperacionesPersona.cs" />
-    <Compile Include="Espectaculo.cs" />
-    <Compile Include="IOperaciones.cs" />
-    <Compile Include="OperacionesLogin.cs" />
-    <Compile Include="Persona.cs" />
+    <Compile Include="ProgramCliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Uam.TrabFinal.Datos\Uam.TrabFinal.Datos.csproj">
-      <Project>{581b86f3-183c-4162-bc7d-e38a5dc6e5f5}</Project>
-      <Name>Uam.TrabFinal.Datos</Name>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Uam.TrabFinal.Entidades\Uam.TrabFinal.Entidades.csproj">
+      <Project>{31b4fa77-3ee1-406f-8573-9a4221cc12d5}</Project>
+      <Name>Uam.TrabFinal.Entidades</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

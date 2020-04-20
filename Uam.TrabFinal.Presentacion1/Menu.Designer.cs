@@ -1,6 +1,6 @@
-﻿namespace Uam.TrabFinal.Presentacion
+﻿namespace Uam.TrabFinal.Presentacion1
 {
-    partial class presentacion
+    partial class Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // presentacion
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "presentacion";
-            this.Text = "presentacion";
-            this.ResumeLayout(false);
-
+            this.Text = "Menu";
         }
 
         #endregion

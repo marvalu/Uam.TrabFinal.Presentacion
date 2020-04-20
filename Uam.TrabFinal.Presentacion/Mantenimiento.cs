@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Uam.TrabFinal.Presentacion
 {
-    public partial class presentacion : Form
+    public partial class Mantenimiento : Form
     {
-        public presentacion()
+        public Mantenimiento()
         {
             InitializeComponent();
         }

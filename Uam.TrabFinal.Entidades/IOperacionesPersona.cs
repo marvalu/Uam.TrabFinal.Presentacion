@@ -25,9 +25,9 @@ namespace Uam.TrabFinal.Entidades
             return conexion.ConexionADO(query);
         }
 
-        public void Elminiar(int id)
+        public void Elminiar(Persona entidad)
         {
-            string query = string.Format("Delete dbo.Persona WHERE Id= {0};", id);
+            string query = string.Format("Delete dbo.Persona WHERE Id= {0};", entidad.id);
             conexion.NonQuery(query);
         }
 

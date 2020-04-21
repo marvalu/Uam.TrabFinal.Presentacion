@@ -11,7 +11,7 @@ namespace Uam.TrabFinal.Entidades
     {
 
         void Insertar(T entidad);
-        void Elminiar(int id);
+        void Elminiar(T entidad);
         void Modificar(T entidad);
         DataTable Buscar(int id);
         DataTable BuscarTodos();

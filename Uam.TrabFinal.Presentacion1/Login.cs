@@ -39,7 +39,7 @@ namespace Uam.TrabFinal.Presentacion1
 
             if (usr != null)
             {
-
+                //se valida tipo por medio de atributo se decide si llama menu condicionado para 
                 MessageBox.Show("Bienvenido Administrador");
                 Menu acceso = new Menu();
                 acceso.Visible = true;

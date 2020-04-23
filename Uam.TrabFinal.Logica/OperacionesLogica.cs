@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 using Uam.TrabFinal.Logica;
 using Uam.TrabFinal.Entidades;
 using Microsoft.VisualBasic;
+using Uam.TrabFinal.Datos;
+using System.Data;
 
 namespace Uam.TrabFinal.Logica
 {
     public class OperacionesLogica
     {
+        conexion cnn = new conexion();
         OperacionesLogin op = new OperacionesLogin();
+        IOperacionesPersona opPersona = new IOperacionesPersona();
 
         IOperacionesEspectaculo operacionesEspectaculo = new IOperacionesEspectaculo();
 
@@ -61,11 +65,27 @@ namespace Uam.TrabFinal.Logica
 
             operacionesEspectaculo.Elminiar(id);
         }
-        public void AgregarEspectaculoNuevo(Espectaculo espectaculo) {
+        public bool AgregarEspectaculoNuevo(Espectaculo espectaculo) {
 
-                  
+            try
+            {
+                if (operacionesEspectaculo.Insertar(espectaculo))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
 
-            operacionesEspectaculo.Insertar(espectaculo);
+                Interaction.MsgBox("Error " + ex);
+                    return false; 
+            } 
+
+            
         }
 
         public Boolean ValidarEntradaDisponible(int evento, int cantidadCompra,int CantidadTotales,int TipoAsiento) {
@@ -280,5 +300,59 @@ namespace Uam.TrabFinal.Logica
         //{
         //    return operacionesEspectaculo.Buscar(id);
         //}
+
+        public bool Insertar(Persona entidad)
+        {
+            
+            try
+            {
+                if (opPersona.Insertar(entidad))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Interaction.MsgBox("Error al ingresarPersona" + ex);
+                return false;
+            }
+
+        }
+
+        public void Eliminar(int id)
+        {
+            try
+            {
+                opPersona.Elminiar(id);
+            }
+            catch (Exception ex)
+            {
+
+                Interaction.MsgBox("Error al Eliminar Persona" + ex);
+            }
+        }
+
+        public DataTable MostarDatos()
+        {
+          return  opPersona.BuscarTodos();
+        }
+
+        public void Modificar(Persona entidad)
+        {
+            try
+            {
+                opPersona.Modificar(entidad);
+            }
+            catch (Exception ex)
+            {
+
+                Interaction.MsgBox("Error al Modificar Persona" + ex);
+            }
+        }
+
     }
 }

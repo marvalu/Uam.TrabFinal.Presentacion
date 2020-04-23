@@ -32,17 +32,14 @@ namespace Uam.TrabFinal.Entidades
             conexion.NonQuery(query);
         }
 
-        public void Insertar(Espectaculo entidad)
+        public bool Insertar(Espectaculo entidad)
         {
             // string query = string.Format("INSERT INTO dbo.Espectaculo (Nombre,Descripcion,Horario) " + "VALUES('{0}','{1}','{2}');", entidad.Nombre, entidad.Descripcion, entidad.Horario);
 
             string query = string.Format("INSERT INTO dbo.Espectaculos (Grupo,Descripcion,CantidadAsientosBajos,CantidadAsientosMedios,CantidadAsientosAltos,CostoAsientosAltos,CostoAsientosMedio,CostoAsientosBajos,CantidadAsientosDiscapacitados,CostoAsientosDiscapacitados)" + "VALUES ('{0}','{1}','{2}','{3}','{4}','{5}',('{6}','{7}','{8}','{9}');",
                 entidad.Grupo, entidad.Descripcion, entidad.CantidadAsientosBajos, entidad.CantidadAsientosMedios, entidad.CantidadAsientosAltos, entidad.CostoAsientosAltos, entidad.CostoAsientosMedios, entidad.CostoAsientosBajos, entidad.CantidadAsientosDiscapacitados, entidad.CostoAsientosDiscapacitados);
 
-
-
-
-            conexion.NonQuery(query);
+          return  conexion.NonQuery(query);
         }
 
         public void Modificar(Espectaculo entidad)

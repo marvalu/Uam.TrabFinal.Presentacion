@@ -45,6 +45,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textModificar = new System.Windows.Forms.TextBox();
             this.Salir = new System.Windows.Forms.Button();
+            this.textPass = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPersona)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,7 +104,7 @@
             // 
             this.rdAdmin.AutoSize = true;
             this.rdAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdAdmin.Location = new System.Drawing.Point(23, 287);
+            this.rdAdmin.Location = new System.Drawing.Point(17, 348);
             this.rdAdmin.Name = "rdAdmin";
             this.rdAdmin.Size = new System.Drawing.Size(147, 24);
             this.rdAdmin.TabIndex = 5;
@@ -114,7 +116,7 @@
             // 
             this.rdUsr.AutoSize = true;
             this.rdUsr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdUsr.Location = new System.Drawing.Point(229, 287);
+            this.rdUsr.Location = new System.Drawing.Point(229, 348);
             this.rdUsr.Name = "rdUsr";
             this.rdUsr.Size = new System.Drawing.Size(95, 24);
             this.rdUsr.TabIndex = 6;
@@ -159,11 +161,12 @@
             this.btAgregar.TabIndex = 11;
             this.btAgregar.Text = "Agregar";
             this.btAgregar.UseVisualStyleBackColor = true;
+            this.btAgregar.Click += new System.EventHandler(this.btAgregar_Click);
             // 
             // btModifica
             // 
             this.btModifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btModifica.Location = new System.Drawing.Point(998, 287);
+            this.btModifica.Location = new System.Drawing.Point(1055, 286);
             this.btModifica.Name = "btModifica";
             this.btModifica.Size = new System.Drawing.Size(120, 50);
             this.btModifica.TabIndex = 12;
@@ -179,20 +182,21 @@
             this.Eliminar.TabIndex = 13;
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseVisualStyleBackColor = true;
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(689, 291);
+            this.label5.Location = new System.Drawing.Point(728, 350);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(264, 20);
+            this.label5.Size = new System.Drawing.Size(296, 20);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Indique el nombre a modificar:";
+            this.label5.Text = "Indique el ID a modificar/Eliminar:";
             // 
             // textModificar
             // 
-            this.textModificar.Location = new System.Drawing.Point(754, 326);
+            this.textModificar.Location = new System.Drawing.Point(780, 405);
             this.textModificar.Name = "textModificar";
             this.textModificar.Size = new System.Drawing.Size(186, 22);
             this.textModificar.TabIndex = 15;
@@ -201,7 +205,7 @@
             // 
             this.Salir.BackColor = System.Drawing.Color.Red;
             this.Salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Salir.Location = new System.Drawing.Point(1033, 375);
+            this.Salir.Location = new System.Drawing.Point(1071, 405);
             this.Salir.Name = "Salir";
             this.Salir.Size = new System.Drawing.Size(104, 34);
             this.Salir.TabIndex = 16;
@@ -209,11 +213,30 @@
             this.Salir.UseVisualStyleBackColor = false;
             this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
+            // textPass
+            // 
+            this.textPass.Location = new System.Drawing.Point(139, 291);
+            this.textPass.Name = "textPass";
+            this.textPass.Size = new System.Drawing.Size(185, 22);
+            this.textPass.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(20, 286);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 25);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Password:";
+            // 
             // Personas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1196, 451);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textPass);
             this.Controls.Add(this.Salir);
             this.Controls.Add(this.textModificar);
             this.Controls.Add(this.label5);
@@ -258,5 +281,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textModificar;
         private System.Windows.Forms.Button Salir;
+        private System.Windows.Forms.TextBox textPass;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -13,6 +13,8 @@ namespace Uam.TrabFinal.Logica
     {
         OperacionesLogin op = new OperacionesLogin();
 
+        IOperacionesEspectaculo operacionesEspectaculo = new IOperacionesEspectaculo();
+
         //  Persona persona = new Persona();
         public Boolean login(Usuario user)
         {
@@ -48,6 +50,100 @@ namespace Uam.TrabFinal.Logica
             }
 
             return false;
+        }
+        public void ModificaEspectaculo(Espectaculo espectaculo) {
+
+            operacionesEspectaculo.Modificar(espectaculo);
+        
+        }
+
+        public void EliminarEspectaculo(int id) {
+
+            operacionesEspectaculo.Elminiar(id);
+        }
+        public void AgregarEspectaculoNuevo(Espectaculo espectaculo) {
+
+                  
+
+            operacionesEspectaculo.Insertar(espectaculo);
+        }
+
+        public Boolean ValidarEntradaDisponible(int evento, int cantidadCompra,int CantidadTotales,int TipoAsiento) {
+            //CantidadAsientosBajos =1
+            //CantidadAsientosMedios=2
+            //CantidadAsientosAltos=3
+            //CantidadAsientosDiscapacitados=4
+            //Ayuda para entender el switch
+            int nuevaCantidad;
+            Boolean Exito=false; //validar si se pudo realizar la compra
+           
+
+                switch (TipoAsiento) {
+
+                    case 1:
+                    //CantidadAsientosBajos =1
+                    if ((CantidadTotales - cantidadCompra) >= 0)
+                    {
+                        nuevaCantidad = CantidadTotales - cantidadCompra;
+                        operacionesEspectaculo.ModificarCantidadAsientosBajos(nuevaCantidad,evento);
+                        Exito = true;
+                    }
+                    else {
+                        Exito = false;
+                    
+                    }
+                        break;
+
+                case 2:
+                    //CantidadAsientosMedios=2
+                    if ((CantidadTotales - cantidadCompra) >= 0)
+                    {
+                        nuevaCantidad = CantidadTotales - cantidadCompra;
+                        operacionesEspectaculo.ModificarCantidadAsientosMedios(nuevaCantidad,evento);
+                        Exito = true;
+                    }
+                    else
+                    {
+                        Exito = false;
+
+                    }
+                    break;
+                case 3:
+                    //CantidadAsientosAltos=3
+                    if ((CantidadTotales - cantidadCompra) >= 0)
+                    {
+                        nuevaCantidad = CantidadTotales - cantidadCompra;
+                        operacionesEspectaculo.ModificarCantidadAsientosAltos(nuevaCantidad,evento);
+                        Exito = true;
+                    }
+                    else
+                    {
+                        Exito = false;
+
+                    }
+                    break;
+                case 4:
+                    //CantidadAsientosDiscapacitados=4
+                    if ((CantidadTotales - cantidadCompra) >= 0)
+                    {
+                        nuevaCantidad = CantidadTotales - cantidadCompra;
+                        operacionesEspectaculo.ModificarCantidadAsientosDiscapacitados(nuevaCantidad,evento);
+                        Exito = true;
+                    }
+                    else
+                    {
+                        Exito = false;
+
+                    }
+                    break;
+
+            }
+
+
+
+
+            return Exito;
+        
         }
         //Operaciones Persona
         //Metodo para crear una persona

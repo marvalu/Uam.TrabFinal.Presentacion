@@ -53,20 +53,47 @@ namespace Uam.TrabFinal.Entidades
                  entidad.Grupo, entidad.Descripcion, entidad.CantidadAsientosBajos, entidad.CantidadAsientosMedios, entidad.CantidadAsientosAltos, entidad.CostoAsientosAltos, entidad.CostoAsientosMedios, entidad.CostoAsientosBajos, entidad.CantidadAsientosDiscapacitados, entidad.CostoAsientosDiscapacitados);
 
 
-            //           UPDATE[dbo].[Espectaculos]
-            //  SET[Grupo] = < Grupo, nchar(100),>
-            //     ,[Descripcion] = <Descripcion, nchar(100),>
-            //     ,[CantidadAsientosBajos] = <CantidadAsientosBajos, int,>
-            //     ,[CantidadAsientosMedios] = <CantidadAsientosMedios, int,>
-            //     ,[CantidadAsientosAltos] = <CantidadAsientosAltos, int,>
-            //     ,[CostoAsientosAltos] = <CostoAsientosAltos, int,>
-            //     ,[CostoAsientosMedio] = <CostoAsientosMedio, int,>
-            //     ,[CostoAsientosBajos] = <CostoAsientosBajos, int,>
-            //     ,[CantidadAsientosDiscapacitados] = <CantidadAsientosDiscapacitados, int,>
-            //     ,[CostoAsientosDiscapacitados] = <CostoAsientosDiscapacitados, int,>
-            //WHERE<Search Conditions,,>
+         
 
             conexion.NonQuery(query);
+        }
+
+        public void ModificarCantidadAsientosBajos(int cantidad, int evento) {
+
+
+            string query = string.Format("UPDATE dbo.Espectaculo SET CantidadAsientosBajos='{0}, WHERE Id = '{1}, cantidad",cantidad,evento);
+
+            conexion.NonQuery(query);
+
+        }
+
+        public void ModificarCantidadAsientosMedios(int cantidad, int evento)
+        {
+
+
+            string query = string.Format("UPDATE dbo.Espectaculo SET CantidadAsientosMedios='{0}, WHERE Id = '{1}, cantidad", cantidad, evento);
+
+            conexion.NonQuery(query);
+
+        }
+        public void ModificarCantidadAsientosAltos(int cantidad, int evento)
+        {
+
+
+            string query = string.Format("UPDATE dbo.Espectaculo SET CantidadAsientosAltos='{0}, WHERE Id = '{1}, cantidad", cantidad, evento);
+
+            conexion.NonQuery(query);
+
+        }
+
+        public void ModificarCantidadAsientosDiscapacitados(int cantidad, int evento)
+        {
+
+
+            string query = string.Format("UPDATE dbo.Espectaculo SET CantidadAsientosDiscapacitados='{0}, WHERE Id = '{1}, cantidad", cantidad, evento);
+
+            conexion.NonQuery(query);
+
         }
     }
 }

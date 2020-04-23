@@ -16,5 +16,29 @@ namespace Uam.TrabFinal.Presentacion1
         {
             InitializeComponent();
         }
+
+        private void operacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void personasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Personas per = new Personas();
+            this.Hide();
+            per.Show();
+        }
+
+        private void eventosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Espectaculos espe = new Espectaculos();
+            this.Hide();
+            espe.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

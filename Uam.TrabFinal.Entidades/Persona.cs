@@ -41,7 +41,7 @@ namespace Uam.TrabFinal.Entidades
             _email = email;
             _tipoUsuario = tipoUsuario;
             _password = password;
-            _id = Id;
+            _id = id;
             
         }
 

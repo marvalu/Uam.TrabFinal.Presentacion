@@ -16,7 +16,7 @@ namespace Uam.TrabFinal.SocketCliente
             Console.ReadKey();
         }
 
-        public Usuario ExecuteClientObject(Usuario usr)
+        public Persona ExecuteClientObject(Persona usr)
         {
             try
             {
@@ -62,11 +62,11 @@ namespace Uam.TrabFinal.SocketCliente
 
                     int byteRecv = sender.Receive(messageReceived);
 
-                    Usuario user = new Usuario();
+                    Persona user = new Persona();
 
                     user = user.DeSerialize(messageReceived);
 
-                    Console.WriteLine("Respuesta Server -> {0} ", user.Usr);
+                    Console.WriteLine("Respuesta Server -> {0} ", user.Nombre);
                     // Close Socket using  
                     // the method Close() 
                     sender.Shutdown(SocketShutdown.Both);

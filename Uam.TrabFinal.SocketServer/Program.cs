@@ -31,7 +31,7 @@ namespace Uam.TrabFinal.SocketServer
             // Socket Class Costructor 
             Socket listener = new Socket(ipAddr.AddressFamily,
                          SocketType.Stream, ProtocolType.Tcp);
-            Usuario usrRecibido = new Usuario();
+            Persona usrRecibido = new Persona();
             try
             {
 
@@ -70,15 +70,15 @@ namespace Uam.TrabFinal.SocketServer
 
 
 
-                    Console.WriteLine("Text received -> {0} ", usrRecibido.Usr);
+                    Console.WriteLine("Text received -> {0} ", usrRecibido.Nombre);
 
                     //dire.Pais = "987654321";
                     byte[] message = Encoding.ASCII.GetBytes("Test Server");
 
                     // Send a message to Client  
                     // using Send() method 
-                    clientSocket.Send((men == false ? (new Usuario("Fallo de ingresar Usuario", ""
-                        ).Serialize()) : new Usuario("Se ingreso al menu", ""
+                    clientSocket.Send((men == false ? (new Persona("Fallo de ingresar Usuario", "", ""
+                        ).Serialize()) : new Persona("Se ingreso al menu", "", ""
                        ).Serialize()));
 
                     // Close client Socket using the 

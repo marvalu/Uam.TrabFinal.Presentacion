@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Uam.TrabFinal.Entidades
 {
+    [Serializable]
     public class Persona 
     {
 
@@ -45,12 +48,32 @@ namespace Uam.TrabFinal.Entidades
             
         }
 
-        public Persona(string nombre, string cedula)
+        public Persona(string nombre, string password, string tipoUsuario)
         {
             _nombre = nombre;
-            _cedula = cedula;
+            _password = password;
+            _tipoUsuario = tipoUsuario;
         }
 
         public Persona() { }
+
+        public byte[] Serialize()
+        {
+            BinaryFormatter bin = new BinaryFormatter();
+            MemoryStream mem = new MemoryStream();
+            bin.Serialize(mem, this);
+            return mem.GetBuffer();
+        }
+
+        public Persona DeSerialize(byte[] TransmissionBuffer)
+        {
+            byte[] dataBuffer = TransmissionBuffer.ToArray();
+            BinaryFormatter bin = new BinaryFormatter();
+            MemoryStream mem = new MemoryStream();
+            mem.Write(dataBuffer, 0, dataBuffer.Length);
+            mem.Seek(0, 0);
+
+            return (Persona)bin.Deserialize(mem);
+        }
     }
 }

@@ -15,24 +15,24 @@ namespace Uam.TrabFinal.Entidades
         private readonly string ConnectionString = "Data Source=.;Initial Catalog=Progra3;Integrated Security=True";
 
       
-            public Boolean Ingreso(Usuario usr)
+            public Boolean Ingreso(Persona usr)
             {
 
-                string query = string.Format("select * from [dbo].[Admin]");
+                string query = string.Format("select * from [dbo].[Usuarios]");
 
                 try
                 {
-                    List<Usuario> respuesta;
+                    List<Persona> respuesta;
 
                     respuesta = QueryUsingLista2(query);
 
                     if (respuesta != null)
                     {
 
-                        foreach (Usuario user in respuesta)
+                        foreach (Persona user in respuesta)
                         {
 
-                            if (user.Usr== user.Usr &&  user.Password == user.Password)
+                            if (user.Nombre== user.Nombre &&  user.Password == user.Password)
                             {
 
                                 return true;
@@ -64,10 +64,10 @@ namespace Uam.TrabFinal.Entidades
             }
 
 
-        public List<Usuario> QueryUsingLista2(string query)
+        public List<Persona> QueryUsingLista2(string query)
         {
 
-            List<Usuario> usr = new List<Usuario>();
+            List<Persona> usr = new List<Persona>();
             SqlCommand cmd;
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -84,7 +84,7 @@ namespace Uam.TrabFinal.Entidades
                         while (resultado.Read())
                         {
 
-                            usr.Add(new Usuario(resultado.GetString(0).Trim(), resultado.GetString(1).Trim()));
+                            usr.Add(new Persona(resultado.GetString(1).Trim(), resultado.GetString(5).Trim(), resultado.GetString(6).Trim()));
 
                         }
 

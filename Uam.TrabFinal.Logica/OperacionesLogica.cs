@@ -20,7 +20,7 @@ namespace Uam.TrabFinal.Logica
         IOperacionesEspectaculo operacionesEspectaculo = new IOperacionesEspectaculo();
 
         //  Persona persona = new Persona();
-        public Boolean login(Usuario user)
+        public Boolean login(Persona user)
         {
 
             try

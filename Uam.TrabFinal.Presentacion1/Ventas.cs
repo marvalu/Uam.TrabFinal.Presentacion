@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Uam.TrabFinal.Entidades;
 
 namespace Uam.TrabFinal.Presentacion1
 {
@@ -15,6 +16,19 @@ namespace Uam.TrabFinal.Presentacion1
         public Ventas()
         {
             InitializeComponent();
+        }
+
+        private void Ventas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void UsuarioRecibido(Personas per) { 
+        }
+
+        internal void UsuarioRecibido(Persona usr)
+        {
+            throw new NotImplementedException();
         }
     }
 }

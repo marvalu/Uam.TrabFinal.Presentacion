@@ -33,18 +33,38 @@ namespace Uam.TrabFinal.Presentacion1
 
         private void btIngresar_Click(object sender, EventArgs e)
         {
-            Usuario usr;
-            usr = sc.ExecuteClientObject(new Usuario(texUsuario.Text, texClave.Text));
-           
+            Persona usr = new Persona();
+
+            usr.Nombre = texUsuario.Text;
+            usr.Password = texClave.Text;
+            usr.TipoUsuario = comboTipo.Text;
+
+            usr = sc.ExecuteClientObject(usr);
 
             if (usr != null)
             {
-                //se valida tipo por medio de atributo se decide si llama menu condicionado para 
-                MessageBox.Show("Bienvenido Administrador");
-                Menu acceso = new Menu();
-                acceso.Visible = true;
+                if (usr.TipoUsuario.Equals("Administrador"))
+                {
+                    MessageBox.Show("Bienvenido Administrador");
+                    Menu acceso = new Menu();
 
-                Visible = false;
+                    acceso.Visible = true;
+
+                    Visible = false;
+                }
+                else
+                {
+                    if (usr.TipoUsuario.Equals("Usuario"))
+                    {
+                        MessageBox.Show("Bienvenido" + usr.Nombre);
+                        Ventas ventas = new Ventas();
+                        ventas.UsuarioRecibido(usr);
+                        ventas.Visible = true;
+                        this.Visible = false;
+                    }
+                }
+
+
             }
             else
             {

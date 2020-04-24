@@ -24,7 +24,7 @@ namespace Uam.TrabFinal.Entidades
 
         public Usuario(string usr, string password)
         {
-            usr = usr;
+            //usr = usr;
             _password = password;
         }
 

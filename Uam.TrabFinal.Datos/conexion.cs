@@ -11,8 +11,8 @@ namespace Uam.TrabFinal.Datos
    public class conexion
     {
 
-     //  private string ConnectionString = @"Data Source=DESKTOP-9I35C0O\SQLEXPRESS;Initial Catalog=TrabFinal;User ID=progra3;Password=123456";
-        private readonly string ConnectionString = "Data Source=.;Initial Catalog=Progra3;Integrated Security=True";
+      private string ConnectionString = @"Data Source=DESKTOP-9I35C0O\SQLEXPRESS;Initial Catalog=TrabFinal;User ID=progra;Password=123456";
+     //   private readonly string ConnectionString = "Data Source=.;Initial Catalog=Progra3;Integrated Security=True";
         public Boolean Query(string query)
         {
             SqlDataReader resultado = null;

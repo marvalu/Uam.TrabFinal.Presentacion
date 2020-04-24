@@ -55,17 +55,20 @@ namespace Uam.TrabFinal.Logica
 
             return false;
         }
-        public void ModificaEspectaculo(Espectaculo espectaculo) {
+        public void ModificaEspectaculo(Espectaculo espectaculo)
+        {
 
             operacionesEspectaculo.Modificar(espectaculo);
-        
+
         }
 
-        public void EliminarEspectaculo(int id) {
+        public void EliminarEspectaculo(int id)
+        {
 
             operacionesEspectaculo.Elminiar(id);
         }
-        public bool AgregarEspectaculoNuevo(Espectaculo espectaculo) {
+        public bool AgregarEspectaculoNuevo(Espectaculo espectaculo)
+        {
 
             try
             {
@@ -82,44 +85,47 @@ namespace Uam.TrabFinal.Logica
             {
 
                 Interaction.MsgBox("Error " + ex);
-                    return false; 
-            } 
+                return false;
+            }
 
-            
+
         }
 
-        public Boolean ValidarEntradaDisponible(int evento, int cantidadCompra,int CantidadTotales,int TipoAsiento) {
+        public Boolean ValidarEntradaDisponible(int evento, int cantidadCompra, int CantidadTotales, int TipoAsiento)
+        {
             //CantidadAsientosBajos =1
             //CantidadAsientosMedios=2
             //CantidadAsientosAltos=3
             //CantidadAsientosDiscapacitados=4
             //Ayuda para entender el switch
             int nuevaCantidad;
-            Boolean Exito=false; //validar si se pudo realizar la compra
-           
+            Boolean Exito = false; //validar si se pudo realizar la compra
 
-                switch (TipoAsiento) {
 
-                    case 1:
+            switch (TipoAsiento)
+            {
+
+                case 1:
                     //CantidadAsientosBajos =1
                     if ((CantidadTotales - cantidadCompra) >= 0)
                     {
                         nuevaCantidad = CantidadTotales - cantidadCompra;
-                        operacionesEspectaculo.ModificarCantidadAsientosBajos(nuevaCantidad,evento);
+                        operacionesEspectaculo.ModificarCantidadAsientosBajos(nuevaCantidad, evento);
                         Exito = true;
                     }
-                    else {
+                    else
+                    {
                         Exito = false;
-                    
+
                     }
-                        break;
+                    break;
 
                 case 2:
                     //CantidadAsientosMedios=2
                     if ((CantidadTotales - cantidadCompra) >= 0)
                     {
                         nuevaCantidad = CantidadTotales - cantidadCompra;
-                        operacionesEspectaculo.ModificarCantidadAsientosMedios(nuevaCantidad,evento);
+                        operacionesEspectaculo.ModificarCantidadAsientosMedios(nuevaCantidad, evento);
                         Exito = true;
                     }
                     else
@@ -133,7 +139,7 @@ namespace Uam.TrabFinal.Logica
                     if ((CantidadTotales - cantidadCompra) >= 0)
                     {
                         nuevaCantidad = CantidadTotales - cantidadCompra;
-                        operacionesEspectaculo.ModificarCantidadAsientosAltos(nuevaCantidad,evento);
+                        operacionesEspectaculo.ModificarCantidadAsientosAltos(nuevaCantidad, evento);
                         Exito = true;
                     }
                     else
@@ -147,7 +153,7 @@ namespace Uam.TrabFinal.Logica
                     if ((CantidadTotales - cantidadCompra) >= 0)
                     {
                         nuevaCantidad = CantidadTotales - cantidadCompra;
-                        operacionesEspectaculo.ModificarCantidadAsientosDiscapacitados(nuevaCantidad,evento);
+                        operacionesEspectaculo.ModificarCantidadAsientosDiscapacitados(nuevaCantidad, evento);
                         Exito = true;
                     }
                     else
@@ -163,7 +169,7 @@ namespace Uam.TrabFinal.Logica
 
 
             return Exito;
-        
+
         }
         //Operaciones Persona
         //Metodo para crear una persona
@@ -303,7 +309,7 @@ namespace Uam.TrabFinal.Logica
 
         public bool Insertar(Persona entidad)
         {
-            
+
             try
             {
                 if (opPersona.Insertar(entidad))
@@ -338,7 +344,7 @@ namespace Uam.TrabFinal.Logica
 
         public DataTable MostarDatos()
         {
-          return  opPersona.BuscarTodos();
+            return opPersona.BuscarTodos();
         }
 
         public void Modificar(Persona entidad)
@@ -354,5 +360,62 @@ namespace Uam.TrabFinal.Logica
             }
         }
 
+
+        public DataTable mostrarTodosEventos()
+        {
+
+            return operacionesEspectaculo.BuscarTodosEventos();
+
+        }
+        public DataTable mostrarAsientos(int id)
+        {
+
+            return operacionesEspectaculo.Buscar(id);
+
+        }
+
+        public DataTable PrecioAsientoBajo(int id)
+        {
+
+            return operacionesEspectaculo.PrecioAsientoBajo(id);
+        }
+        public DataTable PrecioAsientoMedio(int id)
+        {
+
+            return operacionesEspectaculo.PrecioAsientoMedio(id);
+        }
+        public DataTable PrecioAsientoAlto(int id)
+        {
+
+            return operacionesEspectaculo.PrecioAsientoAlto(id);
+        }
+        public DataTable PrecioAsientoDiscapacitado(int id)
+        {
+
+            return operacionesEspectaculo.PrecioAsientoDiscapacitado(id);
+        }
+        public DataTable CantidadAsientoBajo(int id) {
+
+           return operacionesEspectaculo.BuscarCantidadAsientoBajo(id);
+        
+        }
+        public DataTable CantidadAsientoMedio(int id)
+        {
+
+            return operacionesEspectaculo.BuscarCantidadAsientosMedio(id);
+
+        }
+        public DataTable CantidadAsientoalto(int id)
+        {
+
+            return operacionesEspectaculo.BuscarCantidadAsientosAltos(id);
+
+        }
+        public DataTable CantidadAsientoDiscapacitado(int id)
+        {
+
+            return operacionesEspectaculo.BuscarCantidadAsientosDiscapacitados(id);
+
+        }
     }
 }

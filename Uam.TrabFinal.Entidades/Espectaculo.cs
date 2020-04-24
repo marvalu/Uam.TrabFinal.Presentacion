@@ -22,7 +22,7 @@ namespace Uam.TrabFinal.Entidades
         private int _cantidadAsientosDiscapacitados;
         private int _costoAsientosDiscapacitados;
 
-        
+
 
         public int Id { get => _id; set => _id = value; }
         public string Grupo { get => _grupo; set => _grupo = value; }
@@ -55,5 +55,20 @@ namespace Uam.TrabFinal.Entidades
         public Espectaculo() { }
 
 
+
+        //public Espectaculo(string grupo, string descripcion, int cantidadAsientosBajos, int costoAsientosBajos, int cantidadAsientosMedios, int costoAsientosMedios, int cantidadAsientosAltos, int costoAsientosAltos, int cantidadAsientosDiscapacitados, int costoAsientosDiscapacitados)
+        //{
+
+        //    _grupo = grupo;
+        //    _descripcion = descripcion;
+        //    _cantidadAsientosBajos = cantidadAsientosBajos;
+        //    _costoAsientosBajos = costoAsientosBajos;
+        //    _cantidadAsientosMedios = cantidadAsientosMedios;
+        //    _costoAsientosMedios = costoAsientosMedios;
+        //    _cantidadAsientosAltos = cantidadAsientosAltos;
+        //    _costoAsientosAltos = costoAsientosAltos;
+        //    _cantidadAsientosDiscapacitados = cantidadAsientosDiscapacitados;
+        //    _costoAsientosDiscapacitados = costoAsientosDiscapacitados;
+        //}
     }
 }

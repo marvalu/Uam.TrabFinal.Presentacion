@@ -312,7 +312,7 @@ namespace Uam.TrabFinal.Logica
 
             try
             {
-                if (opPersona.Insertar(entidad))
+                     if (opPersona.Insertar(entidad))
                 {
                     return true;
                 }
@@ -417,5 +417,32 @@ namespace Uam.TrabFinal.Logica
             return operacionesEspectaculo.BuscarCantidadAsientosDiscapacitados(id);
 
         }
+
+
+        //public DataTable mostrarAuditoria()
+        //{
+        //    return opAuditoria.buscarTodo();
+        //}
+        //public bool InsertarAuditoria(Clase_Auditoria entidad)
+        //{
+
+        //    try
+        //    {
+        //        if (opAuditoria.insertar(entidad))
+        //        {
+        //            return true;
+        //        }
+        //        else
+        //        {
+        //            return false;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Interaction.MsgBox("Error al ingresar Auditoria" + ex);
+        //        return false;
+        //    }
+
+        //}
     }
 }

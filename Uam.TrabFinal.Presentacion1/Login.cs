@@ -58,7 +58,7 @@ namespace Uam.TrabFinal.Presentacion1
                     {
                         MessageBox.Show("Bienvenido" + usr.Nombre);
                         Ventas ventas = new Ventas();
-                        ventas.UsuarioRecibido(usr);
+                       // ventas.UsuarioRecibido(usr);
                         ventas.Visible = true;
                         this.Visible = false;
                     }

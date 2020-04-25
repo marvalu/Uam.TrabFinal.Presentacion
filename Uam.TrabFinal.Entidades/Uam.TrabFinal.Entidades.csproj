@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clase_Auditoria.cs" />
+    <Compile Include="IAuditoria.cs" />
+    <Compile Include="IOperacionesAuditoria.cs" />
     <Compile Include="IOperacionesEspectaculo.cs" />
     <Compile Include="IOperacionesPersona.cs" />
     <Compile Include="Espectaculo.cs" />

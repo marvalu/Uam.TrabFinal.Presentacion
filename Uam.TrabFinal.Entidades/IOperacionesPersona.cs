@@ -33,13 +33,15 @@ namespace Uam.TrabFinal.Entidades
 
         public bool Insertar(Persona entidad)
         {
-            string query = string.Format("INSERT INTO dbo.Usuarios (Nombre,Apellidos,Cedula,Email,TipoUsuario,Password)" + "VALUES ('{0}','{1}','{2}','{3},'{4}','{5}');",
-                entidad.Nombre, entidad.Apellido, entidad.Cedula, entidad.Email,entidad.TipoUsuario, entidad.Password);
-          return  conexion.NonQuery(query);
+            string query = string.Format("INSERT INTO dbo.Persona (Nombre,Apellidos,Cedula,Email,Tipo,Password)" + "VALUES ('{0}','{1}','{2}','{3},'{4}','{5}');",
+                entidad.Nombre, entidad.Apellido, entidad.Cedula, entidad.Email, entidad.TipoUsuario, entidad.Password);
+
 
 
             //string query = string.Format("INSERT INTO dbo.Persona  (Nombre,Apellidos,Cedula,Email,Tipo,Password)" + "VALUES ('{0} ",
-            //    entidad.Nombre, entidad.Apellido, entidad.Cedula, entidad.Email, entidad.TipoUsuario, entidad.Password, entidad.Id);
+            //   entidad.Nombre, entidad.Apellido, entidad.Cedula, entidad.Email, entidad.TipoUsuario, entidad.Password, entidad.Id);
+            //
+            return conexion.NonQuery(query);
 
         }
 

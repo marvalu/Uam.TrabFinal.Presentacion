@@ -40,5 +40,19 @@ namespace Uam.TrabFinal.Presentacion1
         {
             this.Close();
         }
+
+        private void espectaculosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ventas ve = new Ventas();
+            this.Hide();
+            ve.Show();
+        }
+
+        private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Auditoria ve = new Auditoria();
+            this.Hide();
+            ve.Show();
+        }
     }
 }
